@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="getUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <!-- <button class="userinfo-nickname" bindtap="onGetOpenid" wx-if="{{!login}}">点击登录</button> -->
+      <text class="userinfo-nickname" wx-else>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+<view class="container">
+	<view class="section panel">
+	  <text class="section_title">工作时长(分钟)</text>
+	  <view class="section_body">
+	    <slider 
+	    	bindchange="changeWorkTime" 
+	    	show-value="true" 
+	    	min="1"
+	    	max="60"
+	    	value="{{workTime}}"
+	    	left-icon="cancel" 
+	    	right-icon="success_no_circle"/>
+	  </view>
+	</view>
+
+	<view class="section panel">
+	  <text class="section_title">休息时长(分钟)</text>
+	  <view class="section_body">
+	    <slider 
+	    	bindchange="changeRestTime" 
+	    	show-value="true" 
+	    	min="5"
+	    	max="60"
+	    	value="{{restTime}}"
+	    	left-icon="cancel" 
+	    	right-icon="success_no_circle"/>
+	  </view>
+	</view>
+
+	<view class="section panel">
+	  <view class="section_title">
+	  	<text>主页背景</text>
+	  </view>
+	  <view class="section_body">
+	  	<text bindtab="" class="section_tip">选择背景 > </text>
+	  </view>
+	</view>
+
+	<view class="section panel">
+	  <view class="section_title">
+	  	<switch class="section_check" type="checkbox" size="mini" checked bindchange="switch1Change"/>
+	  	<text>启用铃声</text>
+	  </view>
+	  <view class="section_body">
+	  	<text bindtab="" class="section_tip">选择铃声 > </text>
+	  </view>
+	</view>
+  
+  <view class="section panel" bindtap="bindViewTap">
+	  <view class="section_title" >
+	  	<text>反馈系统</text>
+	  </view>
+	  <view class="section_body">
+	  	<text bindtab="" class="section_tip">去反馈 > </text>
+	  </view>
+	</view>
+  </view>
+  <!-- 上传图片 -->
+  <!-- <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view> -->
+
+    <!-- 授予地址权限 -->
+  <!-- <view class="doAddress">
+    <view class="doAddress-text" bindtap="getAddress"  wx-if="{{!hasAddress}}">
+      <text>授予地址</text>
+    </view>
+  </view> -->
+</view>

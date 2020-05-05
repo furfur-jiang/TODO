@@ -1,0 +1,133 @@
+/* page {
+  box-sizing: border-box;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 90vh;
+}
+.checkboxGroup .checkbox {
+  padding: 20rpx;
+}
+.checkboxGroup .checkbox .delBtn {
+  padding: 20rpx;
+  color: red;
+}
+.inputView {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  bottom: 50rpx;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.inputView input {
+  flex: 4;
+  width: 100%;
+  height: 71rpx;
+  line-height: 71rpx;
+  border: 1px solid #ccc;
+}
+.inputView .addBtn {
+  flex: 2;
+  border-radius: 0;
+} */
+
+
+.container {
+  padding: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.header .plus {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.header .new-todo {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.todos {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.todos .item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.todos .item:last-child {
+  border-bottom: 0;
+}
+
+.todos .item .name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+}
+
+.todos .item.completed .name {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todos .item .checkbox {
+  margin-right: 10rpx;
+}
+
+.todos .item .remove {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #777;
+}
+
+.footer .btn {
+  cursor: pointer;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty .title {
+  font-size: 60rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: #444;
+}
+
+.empty .content {
+  color: #666;
+  text-align: center;
+}
