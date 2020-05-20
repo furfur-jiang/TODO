@@ -52,9 +52,23 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/time/index",
+					"id": 2,
+					"name": "计时",
 					"pathName": "pages/time/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
 					"scene": null
 				}
 			]

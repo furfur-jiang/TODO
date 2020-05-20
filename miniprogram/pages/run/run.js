@@ -24,7 +24,7 @@ function count_down(that) {
   	}   
     
 
- setTimeout
+//  setTimeout
   	setTimeout(function(){
 		countTooGetLocation += 10;
     total_micro_second += 10;
@@ -131,7 +131,7 @@ Page({
     this.setData ({
       time : time,
     })
-
+    console.log('更新时间....')
   },
 
 
@@ -142,19 +142,19 @@ Page({
 
       type: 'gcj02', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
       success: function(res){
-        console.log("res----------")
-        console.log(res)
+        // console.log("res----------")
+        // console.log(res)
 
         //make datas 
         var newCover = {
             latitude: res.latitude,
             longitude: res.longitude,
-            iconPath: '/resources/redPoint.png',
+            iconPath: '../../image/redPoint.png',
           };
         var oriCovers = that.data.covers;
         
-        console.log("oriMeters----------")
-        console.log(oriMeters);
+        // console.log("oriMeters----------")
+        // console.log(oriMeters);
         var len = oriCovers.length;
         var lastCover;
         if (len == 0) {
@@ -163,8 +163,8 @@ Page({
         len = oriCovers.length;
         var lastCover = oriCovers[len-1];
         
-        console.log("oriCovers----------")
-        console.log(oriCovers,len);
+        // console.log("oriCovers----------")
+        // console.log(oriCovers,len);
 
         var newMeters = getDistance(lastCover.latitude,lastCover.longitude,res.latitude,res.longitude)/1000;
         
@@ -173,8 +173,8 @@ Page({
         }
 
         oriMeters = oriMeters + newMeters; 
-        console.log("newMeters----------")
-        console.log(newMeters);
+        // console.log("newMeters----------")
+        // console.log(newMeters);
 
 
         var meters = new Number(oriMeters);

@@ -1,7 +1,7 @@
 <block wx:if="{{logs.length}}">
 	<scroll-view class="container" scroll-y="true">
 	  <view class="log panel">
-	  	<view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log">
+	  	<view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log" wx:key="index">
 	  		<text class="log_start">{{log.startTime}}</text>
 	  		<text class="log_start">{{log.endTime}}</text>
 	  		<text class="log_action">{{log.action}}</text>

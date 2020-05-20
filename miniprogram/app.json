@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/time/index",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/run/run",  
+    "pages/todo/todo"
   ],
   "window": {
     "backgroundColor": "#00b26a",
@@ -13,20 +15,21 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath":"pages/index/index",
-      "text": "代办"
-    },{
-      "pagePath": "pages/time/index",
-      "text": "计时"
-    },{
-      "pagePath": "pages/logs/logs",
-      "text": "记录"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"./image/shouye.png",
+        "selectedIconPath":"./image/shouye1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath":"./image/my.png",
+        "selectedIconPath":"./image/my1.png"
+      }
+    ]
   },
-  "sitemapLocation":"sitemap.json",
+  "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

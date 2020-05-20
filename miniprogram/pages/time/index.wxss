@@ -14,7 +14,7 @@
   align-items: center;
   /* margin-top: -45px; */
   text-align: center;
-  background-color: #3197ed;
+  background-color: #31ed8c;
   transition: all .5s;
   z-index: 1;
 }
