@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header">
     <image class="plus" src="/image/plus.png"/>
-    <input class="new-todo" value="{{ input }}" placeholder="输入代办事项" auto-focus bindinput="inputChangeHandle" bindchange="addTodoHandle"/>
+    <input class="new-todo" value="{{ input }}" focus placeholder="输入代办事项" auto-focus bindinput="inputChangeHandle" bindchange="addTodoHandle"/>
   </view>
   <block wx:if="{{ todos.length }}">
     <view class="todos">

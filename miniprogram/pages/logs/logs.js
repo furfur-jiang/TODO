@@ -15,7 +15,7 @@ Page({
 
   },
   getLogs: function() {
-    let logs = wx.getStorageSync('logs')
+    let logs = wx.getStorageSync('logs')||[];
     logs.forEach(function(item, index, arry) {
       item.startTime = new Date(item.startTime).toLocaleString()
     })

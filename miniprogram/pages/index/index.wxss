@@ -1,17 +1,27 @@
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
 .content .func {
-  width: 35%;
+  width: 90%;
+  height: 200rpx;
+  background-color: #0cb661;
+  margin: 20rpx auto;
+  border-radius: 8rpx;
 }
 .content .func navigator {
   width: 100%;
   height: 100%;
+  display: flex;
 }
 .content .func navigator image {
-  width: 100%;
-  height: 100%;
+  margin: auto 10rpx;
+  width: 28%;
+  height: 91%;
+}
+.content .func navigator .info_wrap {
+  margin: auto 0;
+}
+.content .func navigator .info_wrap .name {
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+}
+.content .func navigator .info_wrap .info {
+  font-size: 24rpx;
 }

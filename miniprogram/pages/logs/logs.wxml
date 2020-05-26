@@ -3,7 +3,6 @@
 	  <view class="log panel">
 	  	<view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log" wx:key="index">
 	  		<text class="log_start">{{log.startTime}}</text>
-	  		<text class="log_start">{{log.endTime}}</text>
 	  		<text class="log_action">{{log.action}}</text>
 	  		<text class="log_action">{{log.name}}</text>
 	  	</view>

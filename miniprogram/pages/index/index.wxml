@@ -1,22 +1,38 @@
 <view class="content">
     <view class="func">
         <navigator url="../todo/todo">
-            <image mode="widthFix" src="../../image/daiban.png"></image>
+            <image mode="" src="../../image/daiban.png"></image>
+            <view class="info_wrap">
+            <view class="name">添加代办</view>
+            <view class="info">添加自己的新任务，查看已添加的任务</view>
+            </view>
         </navigator>
     </view>
     <view class="func">
         <navigator url="../run/run">
-            <image mode="widthFix" src="../../image/paobu.png"></image>
+            <image mode="" src="../../image/paobu.png"></image>
+            <view class="info_wrap">
+        <view class="name">跑步计时</view>
+        <view class="info">实时查看自身的位置，记录跑步时长</view>
+        </view>
         </navigator>
-    </view>
+    </view> 
     <view class="func">
         <navigator url="../time/index">
-            <image mode="widthFix" src="../../image/time.png"></image>
+            <image mode="" src="../../image/time.png"></image>
+            <view class="info_wrap">
+        <view class="name">学霸时间</view>
+        <view class="info">设置倒计时来完成任务，提高工作效率</view></view>
         </navigator>
+        
     </view>
     <view class="func">
         <navigator url="../logs/logs">
-            <image mode="widthFix" src="../../image/logs.png"></image>
+            <image mode="" src="../../image/logs.png"></image>
+            <view class="info_wrap">
+        <view class="name">历史记录</view>
+        <view class="info">查看以前的任务记录，清除历史记录</view>
+</view>
         </navigator>
-    </view>
+            </view>
 </view>

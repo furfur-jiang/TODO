@@ -21,18 +21,16 @@ function count_down(that) {
   	if (countTooGetLocation >= 5000) { //1000为1s
         that.getLocation();
         countTooGetLocation = 0;
-  	}   
-    
+    }  
 
-//  setTimeout
-  	setTimeout(function(){
+    setTimeout(function(){
 		countTooGetLocation += 10;
     total_micro_second += 10;
 		count_down(that);
     }
     ,10
     )
-}
+  }
 
 
 // 时间格式化输出，如03:25:19 86。每10ms都会调用一次
@@ -86,7 +84,7 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     this.getLocation()
-    console.log("onLoad")
+    // console.log("onLoad")
     count_down(this);
   },
   //****************************
@@ -131,7 +129,7 @@ Page({
     this.setData ({
       time : time,
     })
-    console.log('更新时间....')
+
   },
 
 
