@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/my/my",
     "pages/run/run",  
-    "pages/todo/todo"
+    "pages/todo/todo",
+    "pages/feedback/index"
   ],
   "window": {
     "backgroundColor": "#00b26a",

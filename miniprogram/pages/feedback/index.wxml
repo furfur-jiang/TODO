@@ -43,7 +43,7 @@
       </view>
       <view wx:else class="footadd" bindtap="bindtapimg">
         <view class="addbroder">
-            <image src="../../image/add.png"/>
+            <image src="../../image/plus.png"/>
         </view>
       </view>
   </view>
@@ -59,7 +59,7 @@
           <text>联系方式</text>
         </li>
         <li bindtap="footaddmore">
-          <view class="footaddtext"><image src="../../image/add.png"></image></view>
+          <view class="footaddtext"><image src="../../image/plus.png"></image></view>
           <text>更多</text>
         </li>
       </ul>

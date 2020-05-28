@@ -1,20 +1,13 @@
-/*
- ***HotApp云笔记，基于HotApp小程序统计云后台
- ***免费云后台申请地址 https://weixin.hotapp.cn/cloud
- ***API 文档地址：https://weixin.hotapp.cn/api
- ***小程序技术讨论QQ群：173063969
- */
 //引入全局
-const db = wx.cloud.database()
 var app = getApp()
 Page({
   data: {
-    flag: true, //加号的控制打开/关闭
-    userInfo: [], //用户信息，用于头像显示
+    flag: true,//加号的控制打开/关闭
+    userInfo: [],//用户信息，用于头像显示
     feedback: [{
       content: '你可以留下联系方式，文本，图片，进行反馈',
       content_type: 0,
-      contract_info: '', //弹出框input值
+      contract_info: '',//弹出框input值
       myDate: '',
       role: false,
       img: '../../image/01_03.png',
@@ -25,40 +18,41 @@ Page({
       myDate: '',
       role: true,
       img: "../../image/01_07.png"
-    }], //返回数据
-    minutes: '', //分钟间隔
-    addinput: '', //清楚input框的值
-    sendflag: false, //发送按钮控制
-    networkType: '', //判断当前网络类型
+    }
+    ],//返回数据
+    minutes: '',//分钟间隔
+    addinput: '',//清楚input框的值
+    sendflag: false,//发送按钮控制
+    networkType: '',//判断当前网络类型
     addtell: {
-      addtellHidden: true, //弹出框显示/隐藏
-
+      addtellHidden: true,//弹出框显示/隐藏
+      
     },
   },
 
-  onLoad: function(options) {
+  onLoad: function (options) {
 
     // 页面监控
     //app.globalData.hotapp.count(this)
     // 页面初始化 options为页面跳转所带来的参数
   },
-  onReady: function() {
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow: function() {
+  onShow: function () {
     // 页面显示
     //将全局的方法赋值
     var that = this;
     var hotapp = app.globalData.hotapp;
     //调用登录接口
     wx.login({
-      success: function(res) {
+      success: function (res) {
         wx.getUserInfo({
-          success: function(res) {
+          success: function (res) {
             that.setData({
               userInfo: res.userInfo
             })
-
+  
             typeof cb == "function" && cb(res.userInfo)
           }
         })
@@ -66,10 +60,10 @@ Page({
     })
   },
 
-  bindfocus: function(e) {
+  bindfocus: function (e) {
     var that = this;
     wx.getNetworkType({
-      success: function(res) {
+      success: function (res) {
         if (res.networkType == 'fail') {
           wx.showToast({
             title: '当前网络不可用',
@@ -80,29 +74,29 @@ Page({
           wx.hideToast()
         }
         that.setData({
-          networkType: res.networkType // 返回网络类型2g，3g，4g，wifi
+          networkType: res.networkType// 返回网络类型2g，3g，4g，wifi
         })
       }
     })
 
     //当sendflag有值的时候，设置发送按钮显示
     this.setData({
-      sendflag: true
+      sendflag:true
     })
   },
 
-  bindblur: function(e) {
-    var that = this;
-    this.setData({
-      sendflag: false
+  bindblur: function (e) {
+ var that = this;
+  this.setData({
+      sendflag:false
     })
     //提交输入框的数据
     if (e.detail.value != '' && this.data.networkType != 'fail') {
-
+     
       //获取当前时间
       var myDate = new Date();
-      var hours = myDate.getHours(); //获取当前小时数(0-23)
-      var minutes = myDate.getMinutes(); //获取当前分钟数(0-59)
+      var hours = myDate.getHours();       //获取当前小时数(0-23)
+      var minutes = myDate.getMinutes();     //获取当前分钟数(0-59)
       //如果两次时间
       if (minutes == this.data.minutes) {
         var mydata = ''
@@ -121,13 +115,13 @@ Page({
         role: false,
         img: that.data.userInfo.avatarUrl,
       }, {
-        content: '【系统消息】：您的反馈已收到！',
-        content_type: 0,
-        contract_info: '',
-        myDate: '',
-        role: true,
-        img: "../../image/01_07.png"
-      })
+          content: '【系统消息】：您的反馈已收到！',
+          content_type: 0,
+          contract_info: '',
+          myDate: '',
+          role: true,
+          img: "../../image/01_07.png"
+        })
 
       //修改feedback,设置addaddinput为[]值为空
       this.setData({
@@ -137,8 +131,8 @@ Page({
         feedback: newfeedback
       })
       //上传文字到服务器
-
-      app.globalData.hotapp.feedback(e.detail.value, 0, that.data.contract_info, function(res) {
+      
+      app.globalData.hotapp.feedback(e.detail.value, 0, that.data.contract_info, function (res) {
 
         wx.showToast({
           title: '已成功反馈',
@@ -147,22 +141,22 @@ Page({
         })
       })
     }
-
-
+    
+    
   },
-  bindtapimg: function() {
+  bindtapimg: function () {
     //打开添加图片框
     this.setData({
       flag: false
     })
   },
-  closeimg: function() {
+  closeimg: function () {
     //闭合添加图片框
     this.setData({
       flag: true
     })
   },
-  footaddimg: function() {
+  footaddimg: function () {
     var that = this;
     //使用hotapp接口获取图片路径
     app.globalData.hotapp.uploadFeedbackImage(res => {
@@ -175,40 +169,25 @@ Page({
         role: false,
         img: that.data.userInfo.avatarUrl,
       }, {
-        content: '【系统消息】：您的反馈已收到！',
-        content_type: 0,
-        contract_info: that.data.contract_info,
-        role: true,
-        img: "../../image/01_07.png"
-      })
+          content: '【系统消息】：您的反馈已收到！',
+          content_type: 0,
+          contract_info: that.data.contract_info,
+          role: true,
+          img: "../../image/01_07.png"
+        })
       //修改feedback
       that.setData({
         flag: true,
         feedback: newfeedback
       })
       //添加图片到服务器
-      // 让用户选择一张图片
-      wx.chooseImage({
-        success: chooseResult => {
-          // 将图片上传至云存储空间
-          wx.cloud.uploadFile({
-            // 指定上传到的云路径
-            cloudPath: '/faceback',
-            // 指定要上传的文件的小程序临时文件路径
-            filePath: chooseResult.tempFilePaths[0],
-            // 成功回调
-            success: res => {
-              console.log('上传成功', res)
-            },
-          })
-        },
+     
+      app.globalData.hotapp.feedback(res, 1, that.data.contract_info, function (res) {
+        console.log(res)
       })
-      // app.globalData.hotapp.feedback(res, 1, that.data.contract_info, function(res) {
-      //   console.log(res)
-      // })
     })
   },
-  footaddtell: function() {
+  footaddtell: function () {
     //打开弹出框
     this.setData({
       addtell: {
@@ -217,7 +196,7 @@ Page({
       }
     })
   },
-  modalconfirm: function() {
+  modalconfirm: function () {
     //弹出框确认操作
     this.setData({
       flag: true,
@@ -225,8 +204,17 @@ Page({
         addtellHidden: true,
       }
     })
+    wx.showModal({
+      title: "消息提示框",
+      content: "已接收",
+      success: function (res) {
+        if (res.confirm) {
+          console.log("敬请期待");
+        }
+      },
+    });
   },
-  modalcancel: function() {
+  modalcancel: function () {
     //弹出框取消操作
     this.setData({
       addtell: {
@@ -234,33 +222,33 @@ Page({
       }
     })
   },
-  saveusertell: function(e) {
+  saveusertell: function (e) {
     //保存input框的值
     this.setData({
       contract_info: e.detail.value,
       addtell: {
         addtellHidden: false,
-
+      
       }
     })
 
 
   },
-  footaddmore: function() {
+  footaddmore: function () {
     wx.showModal({
-      title: '更多技术支持',
-      content: '微信小程序统计hotapp.cn提供支持，讨论QQ群：173063969',
-      success: function(res) {
+      title: '更多功能',
+      content: '敬请期待',
+      success: function (res) {
         if (res.confirm) {
-          console.log('微信小程序统计hotapp.cn提供支持')
+          console.log('敬请期待')
         }
       }
     })
   },
-  onHide: function() {
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload: function() {
+  onUnload: function () {
     // 页面关闭
   }
 })
