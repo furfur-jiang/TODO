@@ -20,7 +20,13 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
+<<<<<<< HEAD
 		}
+=======
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+>>>>>>> jmq
 	},
 	"appid": "wx4ed245abacd9c2fc",
 	"projectname": "Todo%E5%B0%8F%E6%89%93%E5%8D%A1",
