@@ -143,5 +143,11 @@ Page({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(log)
     wx.setStorageSync('logs', logs)
+  },
+  toMy:function(){
+    console.log('a')
+    wx.switchTab({
+      url:"../my/my"
+    })
   }
 })

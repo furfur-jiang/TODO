@@ -37,5 +37,9 @@
 	  	data-type="rest" 
 	  	class="timer_ctrl {{isRuning && timerType == 'work' ? 'hide' : ''}}" >{{isRuning ? '完成': '休息'}}</view>
 	</view>
+
+	<view class="func" bindtap="toMy" >
+        前往设置时间
+    </view>
 </view>
 
