@@ -34,17 +34,6 @@ save: function () {
     }).then(res=>{
       console.log(res)
     })
-    let openId = ''
-    let wxcode = wx.cloud.callFunction({
-      name: 'login',
-        // data: {
-        //   action: 'getWXACode',
-        // },
-    }).then(res=>{
-      let openId = res.result.openid
-      console.log(res.result.openid)
-    })
-
   },
   // ===== 页面生命周期方法 =====
   onLoad: function () {
