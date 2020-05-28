@@ -1,0 +1,18 @@
+{
+  "name": "applet_punch",
+  "version": "1.0.0",
+  "description": "提供用户便捷打卡，添加代办，跑步计时打卡等功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/furfur-jiang/applet_punch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "miniprogram-sm-crypto": "^0.1.0"
+  }
+}
