@@ -45,7 +45,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  border: 3px solid #1589eb;
+  border: 3px solid #00b26a;
   opacity: .5;
   border-radius: 50%;
 }
@@ -178,7 +178,7 @@
 }
 
 .timer--runing .timer_ctrl {
-  background-color: #208DEA;
+  background-color: #00b26a;
   height: 30px;
   margin-bottom: 30px;
   border: 1px dashed #dedede;

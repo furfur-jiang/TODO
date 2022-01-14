@@ -24,7 +24,8 @@ Page({
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo,
-                cloudID: getApp().globalData.cloudID
+                // cloudID: getApp().globalData.cloudID
+                cloudID:'cloud-fur'
               })
             },
           });
